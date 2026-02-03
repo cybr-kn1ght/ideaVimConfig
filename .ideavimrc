@@ -71,7 +71,7 @@ let g:WhichKeyDesc_fold_expand_all        = "<leader>zo Expand all regions"
 let g:WhichKeyDesc_search_group           = "<leader>s Search / navigate"
 let g:WhichKeyDesc_search_files           = "<leader>sf Search files"
 let g:WhichKeyDesc_search_content         = "<leader>sc Search in path (content)"
-let g:WhichKeyDesc_search_recent_files    = "<leader>sr Recent files"
+let g:WhichKeyDesc_search_recent_files    = "<leader>s. Recent files"
 let g:WhichKeyDesc_search_recent_locations= "<leader>sl Recent locations"
 
 " Actions (intentions)
@@ -176,7 +176,7 @@ nnoremap <leader>a :action ShowIntentionActions<CR>
 
 " Search
 nnoremap <leader>sf :action GotoFile<CR>
-nnoremap <leader>sr :action RecentFiles<CR>
+nnoremap <leader>s. :action RecentFiles<CR>
 nnoremap <leader>sc :action FindInPath<CR>
 nnoremap <leader>sl :action RecentLocations<CR>
 
