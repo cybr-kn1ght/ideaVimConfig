@@ -1,4 +1,4 @@
-"" .ideavimrc - Corey Barr 2025
+"" .ideavimrc - Corey Barr 2026
 
 " ========================================================
 " Base Settings
@@ -46,7 +46,7 @@ let g:WhichKeyDesc_leader_root            = "<leader> Leader menu"
 let g:WhichKeyDesc_leader_leader          = "<leader><leader> Hide tool windows"
 let g:WhichKeyDesc_leader_edit_rc         = "<leader>; Edit .ideavimrc"
 let g:WhichKeyDesc_leader_comment         = "<leader>/ Comment line"
-let g:WhichKeyDesc_leader_project         = "<leader>n Project tool window"
+let g:WhichKeyDesc_leader_project         = "<C-n> Project tool window"
 let g:WhichKeyDesc_leader_terminal        = "<leader>t Terminal"
 
 " Display / layout modes
@@ -73,6 +73,8 @@ let g:WhichKeyDesc_search_files           = "<leader>sf Search files"
 let g:WhichKeyDesc_search_content         = "<leader>sc Search in path (content)"
 let g:WhichKeyDesc_search_recent_files    = "<leader>s. Recent files"
 let g:WhichKeyDesc_search_recent_locations= "<leader>sl Recent locations"
+let g:WhichKeyDesc_search_recent_locations= "<leader>ss Search Symbol"
+let g:WhichKeyDesc_search_recent_locations= "<leader>sa Search All"
 
 " Actions (intentions)
 let g:WhichKeyDesc_action_group           = "<leader>a Actions / intentions"
@@ -154,7 +156,7 @@ inoremap <C-k> :action PopupMenu-selectPrev<CR>
 nnoremap <leader>/ :action CommentByLineComment<CR>
 
 " Open Project Tool Window (instead of NERDTree)
-nnoremap <leader>n :action ActivateProjectToolWindow<CR>
+nnoremap <C-n> :action ActivateProjectToolWindow<CR>
 
 " Folding
 nnoremap <leader>zc :action CollapseAllRegions<CR>
@@ -179,8 +181,10 @@ nnoremap <leader>sf :action GotoFile<CR>
 nnoremap <leader>s. :action RecentFiles<CR>
 nnoremap <leader>sc :action FindInPath<CR>
 nnoremap <leader>sl :action RecentLocations<CR>
+nnoremap <leader>ss :action GoToSymbol<CR>
+nnoremap <leader>sa :action Search<CR>
 
-" Refactoring
+. Refactoring
 nnoremap <leader>rn :action RenameElement<CR>
 nnoremap <leader>rm :action ExtractMethod<CR>
 nnoremap <leader>rv :action IntroduceVariable<CR>
@@ -202,9 +206,9 @@ nnoremap <leader>vc :action CheckinProject<CR>
 nnoremap <leader>vs :action ActivateVersionControlToolWindow<CR>
 nnoremap <leader>vb :action Git.Branches<CR>
 
-" Errors
-nnoremap <leader>en :action ReSharperGotoNextErrorInSolution<CR>
-nnoremap <leader>ep :action ReSharperGotoPrevErrorInSolution<CR>
+" Error diagnostics
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
 
 " Terminal
 nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
@@ -217,6 +221,7 @@ nnoremap <leader><leader> :action HideAllWindows<CR>
 
 " Go to .ideavimrc
 nnoremap <leader>; :e ~/.ideavimrc<CR>
+
 
 " ========================================================
 " Harpoon-style bookmarks
